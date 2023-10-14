@@ -1,5 +1,8 @@
 # excel-data-generator
 一个可以解析 excel 模板并生成出对应数据的工具
+
+该项目编写于 Java 17
+
 ## 使用方法
 
 ### 配置
@@ -7,42 +10,37 @@
 
 ```json
 {
+  "inputFilePath": "input.xlsx",
   "inputConfig": [
     {
-      "id": 0,
       "name": "线路号"
-      
     }, {
-      "id": 1,
-      "name": "计划样本量"
-      
+      "name": "计划样本量",
+      "repeatColumn": true
     }, {
-      "id": 2,
       "name": "车辆自编号"
-      
     }
   ],
+  "outputFilePath": "output.xlsx",
   "outputConfig": [
     {
-      "id": 0,
-      "name": "线路号",
-      "isParse": true
+      "name": "线路号"
     }, {
-      "id": 1,
-      "name": "计划样本量",
-      "isParse": true
+      "name": "车辆自编号"
     }, {
-      "id": 2,
-      "name": "车辆自编号",
-      "isParse": true
+      "name": "性别"
     }
   ]
 }
 ```
 
-`inputConfig`和`outputConfig`中的 id 一一对应，`outputConfig`中的id决定了输出的顺序
+`outputConfig`中的 name 决定了输出的顺序
+
 `name`用于匹配excel表头，需要与表头内容一致
-`outputConfig`中的isParse用于是否解析，为true时会根据解析规则解析内容
+
+`name`也用于匹配输入与输出，`inputConfig`的name和`outputConfig`的name需要一致才能正常输出
+
+`inputConfig` 中的 `repeatColumn` 用于标记“重复数量”列，程序会读取这一列的数，生成对应数量的这一列的数据
 
 ### 解析
 这是一个 excel 表格模板
@@ -53,4 +51,4 @@
 
 分号前一组的概率比后一组低一半
 
-可以在`config.json`中配置是否解析
+计划样本量为每组数据生成的次数，比如 29 就是根据这一行模板生成 29 次，最后输出 29 条数据

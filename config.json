@@ -1,4 +1,5 @@
 {
+  "inputFilePath": "input.xlsx",
   "inputConfig": [
     {
       "name": "线路号"
@@ -61,6 +62,7 @@
       "name": "您最希望公交改进的地方是"
     }
   ],
+  "outputFilePath": "output.xlsx",
   "outputConfig": [
     {
       "name": "线路号"

@@ -8,6 +8,7 @@ public class ExcelDataGenerator {
     public static void main(String[] args) {
         Config.getInstance().loadConfig("/config.json");
 
-        EasyExcel.read("input.xlsx", new ReadExcel()).sheet().doRead();
+        String inputPath = Config.getInstance().getConfig().getInputPath();
+        EasyExcel.read(inputPath, new ReadExcel()).sheet().doRead();
     }
 }

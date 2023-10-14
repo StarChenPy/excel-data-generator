@@ -1,6 +1,7 @@
 package xyz.starsdust.exceldatagenerator.excel;
 
 import com.alibaba.excel.EasyExcel;
+import xyz.starsdust.exceldatagenerator.util.Config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,11 +10,13 @@ public class WriteExcel {
     private List<List<String>> headList = new ArrayList<>();
     private List<List<String>> dataList = new ArrayList<>();
 
+    /**
+     * 将excel文件导出
+     *
+     */
     public void writeExcel() {
-        // 写法1
-        String fileName = "output.xlsx";
-        // 这里 需要指定写用哪个class去写，然后写到第一个sheet，名字为模板 然后文件流会自动关闭
-        EasyExcel.write(fileName).head(this.headList).sheet("模板").doWrite(this.dataList);
+        String outputPath = Config.getInstance().getConfig().getOutputPath();
+        EasyExcel.write(outputPath).head(this.headList).sheet("sheet1").doWrite(this.dataList);
     }
 
     /**
@@ -33,6 +36,10 @@ public class WriteExcel {
         this.headList = headList;
     }
 
+    /**
+     * 写入excel内容
+     * @param list 内容列表
+     */
     public void setData(List<List<String>> list) {
         this.dataList = list;
     }
