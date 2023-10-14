@@ -16,6 +16,11 @@ public class WriteExcel {
         EasyExcel.write(fileName).head(this.headList).sheet("模板").doWrite(this.dataList);
     }
 
+    /**
+     * 这个方法只能写入一行表头
+     * 不过大部分时间应该够用了
+     * @param list 表头列表
+     */
     public void setHead(List<String> list) {
         List<List<String>> headList = new ArrayList<>();
 

@@ -1,7 +1,6 @@
 package xyz.starsdust.exceldatagenerator.util;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import xyz.starsdust.exceldatagenerator.pojo.ConfigType;
 
 import java.io.File;
