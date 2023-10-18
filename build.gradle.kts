@@ -1,9 +1,11 @@
 plugins {
     id("java")
+    id("org.openjfx.javafxplugin") version "0.1.0"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "xyz.starsdust"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 
 repositories {
     mavenCentral()
@@ -25,6 +27,14 @@ dependencies {
 
     // json文件解析
     implementation("org.immutables:gson:2.10.0")
+
+    implementation("org.slf4j:slf4j-simple:2.0.9")
+}
+
+javafx {
+    version = "21"
+    modules("javafx.controls", "javafx.fxml")
+    setPlatform("windows")
 }
 
 tasks.test {

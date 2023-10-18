@@ -1,4 +1,4 @@
-package xyz.starsdust.exceldatagenerator.excel;
+package xyz.starsdust.exceldatagenerator.util.excel;
 
 import com.alibaba.excel.EasyExcel;
 import xyz.starsdust.exceldatagenerator.util.Config;

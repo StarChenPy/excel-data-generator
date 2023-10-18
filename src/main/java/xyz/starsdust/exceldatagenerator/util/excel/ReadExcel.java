@@ -1,4 +1,4 @@
-package xyz.starsdust.exceldatagenerator.excel;
+package xyz.starsdust.exceldatagenerator.util.excel;
 
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
