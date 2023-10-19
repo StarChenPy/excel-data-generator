@@ -23,9 +23,10 @@ public class ExcelDataGenerator extends Application {
     public void start(Stage primaryStage) throws Exception {
         Config.getInstance().loadConfig("/config.json");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/scene.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/root.fxml")));
         primaryStage.setTitle("数据提交器");
         primaryStage.setScene(new Scene(root, 1280, 720));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 }

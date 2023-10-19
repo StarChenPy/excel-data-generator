@@ -1,0 +1,11 @@
+#generateDataButton, #submitDataButton {
+    -fx-background-color: none;
+}
+
+#generateDataButton:hover, #submitDataButton:hover {
+    -fx-background-color: #BDBDBD;
+}
+
+#generateDataButton:selected, #submitDataButton:selected {
+    -fx-background-color: #9E9E9E;
+}
