@@ -2,16 +2,16 @@ package xyz.starsdust.exceldatagenerator.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.scene.layout.Background;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
-import lombok.extern.slf4j.Slf4j;
 import xyz.starsdust.exceldatagenerator.javafx.NoRoundRadioButton;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-@Slf4j
 public class RootController implements Initializable {
     @FXML
     private Label versionText;
@@ -19,6 +19,10 @@ public class RootController implements Initializable {
     private NoRoundRadioButton generateDataButton;
     @FXML
     private NoRoundRadioButton submitDataButton;
+    @FXML
+    private TextArea infoTextArea;
+    @FXML
+    private Pane contentPane;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -28,14 +32,14 @@ public class RootController implements Initializable {
         this.generateDataButton.setText("生成数据");
         this.generateDataButton.setFont(Font.font(16));
         this.generateDataButton.setOnAction(event -> {
-            log.info("生成被选择");
+
         });
         this.generateDataButton.setToggleGroup(tg);
 
         this.submitDataButton.setText("提交数据");
         this.submitDataButton.setFont(Font.font(16));
         this.submitDataButton.setOnAction(event -> {
-            log.info("提交被选择");
+
         });
         this.submitDataButton.setToggleGroup(tg);
 

@@ -16,19 +16,11 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.2"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
 
-    // Lombok
-    compileOnly("org.projectlombok:lombok:1.18.30")
-    annotationProcessor("org.projectlombok:lombok:1.18.30")
-    testCompileOnly("org.projectlombok:lombok:1.18.30")
-    testAnnotationProcessor("org.projectlombok:lombok:1.18.30")
-
     // excel文件操作
     implementation("com.alibaba:easyexcel:3.3.2")
 
     // json文件解析
     implementation("org.immutables:gson:2.10.0")
-
-    implementation("org.slf4j:slf4j-simple:2.0.9")
 }
 
 javafx {
