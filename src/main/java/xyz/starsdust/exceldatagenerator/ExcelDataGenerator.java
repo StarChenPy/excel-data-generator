@@ -1,13 +1,11 @@
 package xyz.starsdust.exceldatagenerator;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import xyz.starsdust.exceldatagenerator.util.Config;
-
-import java.util.Objects;
+import xyz.starsdust.exceldatagenerator.util.Resource;
 
 public class ExcelDataGenerator extends Application {
 //    private static void test() {
@@ -23,7 +21,7 @@ public class ExcelDataGenerator extends Application {
     public void start(Stage primaryStage) throws Exception {
         Config.getInstance().loadConfig("/config.json");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/root.fxml")));
+        Parent root = Resource.loadParentView("/fxml/root_view.fxml");
         primaryStage.setTitle("数据提交器");
         primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.setResizable(false);

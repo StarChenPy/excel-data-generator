@@ -9,3 +9,7 @@
 #generateDataButton:selected, #submitDataButton:selected {
     -fx-background-color: #9E9E9E;
 }
+
+#contentPane {
+    -fx-background-color: black;
+}
